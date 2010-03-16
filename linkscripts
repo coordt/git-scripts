@@ -1,0 +1,14 @@
+#!/bin/bash
+
+FILES=`ls git-*`
+
+for item in $FILES
+do
+    FILENAME="/usr/local/bin/"$item
+    SRC=`pwd`/$item
+    if ! [ -e $FILENAME ]
+    then
+        echo "Adding link: $FILENAME"
+        ln -s $SRC $FILENAME
+    fi
+done
