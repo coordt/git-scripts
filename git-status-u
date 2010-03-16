@@ -1,0 +1,4 @@
+#!/bin/bash
+
+git fetch
+git log --name-status ..origin/master | grep -P '[ACDMRTUXB]\t'
