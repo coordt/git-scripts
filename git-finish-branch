@@ -67,8 +67,9 @@ get_unique_tag
 echo "Using tag: $TAGNAME"
 echo "Merging branch $BRANCH into master..."
 git merge --no-ff $BRANCH
-git tag -a $TAGNAME
+git tag -a $TAGNAME -m"Release $TAGNAME"
 echo "Deleting branch $BRANCH..."
 git branch -d $BRANCH
+git branch -d -r origin/$BRANCH
 echo "Pushing"
-git push --all origin master
+git push --all
