@@ -22,6 +22,13 @@
 	If you commit to the wrong branch (especially ``master``), this script 
 	will fix that for you.
 
+**git-pull-branch**
+	*Usage: git pull-branch branchname*
+	
+	* Pulls the *branchname* branch from origin and tracks it
+	
+	A simple shortcut to get a remote branch from the server.
+
 **git-push-branch**
 	*Usage: git push-branch branchname*
 	
