@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+# Called as git pull-branch branchname
+#
+# Pulls down and tracks a remote branch from origin
+
+# This updates all the remote branches and tags. Appears to be required.
+
+if [ -z $1 ]
+then
+    echo "You need to specify a branch name to pull."
+    echo "Usage: git pull-branch branchname"
+    exit 1
+fi
+
+git fetch --all --tags
+
+git checkout -b $1 origin/$1
