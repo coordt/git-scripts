@@ -71,6 +71,7 @@ git tag -a $TAGNAME -m"Release $TAGNAME"
 echo "Deleting branch $BRANCH..."
 git branch -d $BRANCH
 git branch -d -r origin/$BRANCH
+git push origin :$BRANCH
 echo "Pushing"
 git push --all
 git push --tags
