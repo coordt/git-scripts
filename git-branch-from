@@ -1,0 +1,37 @@
+#!/bin/bash
+#
+# git branch-from commit-reference new-branch
+#
+# create a new branch from the commit-reference
+# move all later commits in the current branch to the new-branch
+# reset the current branch
+if [ -z $1 ]
+then
+    echo "Usage: git branch-from <commit-reference> <new-branch>";
+    exit 1;
+else
+    STARTPOINT=$1
+fi
+if [ -z $2 ]
+then
+    echo "Usage: git branch-from <commit-reference> <new-branch>";
+    exit 1;
+else
+    BRANCH=$2
+fi
+
+CURRENT_BRANCH=`git branch | grep '*' | perl -e '<STDIN> =~ /^..(.+)$/;print $1'`
+
+# If the branch already exists, we have to merge it with the current branch
+if ! [ -z `git branch -a | grep $BRANCH` ]
+then
+    echo "$BRANCH already exists. Please specify a new branch name."
+    exit 1;
+fi
+
+echo "Creating $BRANCH from commit $STARTPOINT"
+git checkout -b $BRANCH $STARTPOINT
+echo "Pulling in commits from $CURRENT_BRANCH"
+git merge $CURRENT_BRANCH
+echo "Resetting $CURRENT_BRANCH to $STARTPOINT"
+git reset --hard $CURRENT_BRANCH $STARTPOINT
