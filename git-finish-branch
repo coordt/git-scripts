@@ -62,6 +62,10 @@ echo "Switching to the master branch..."
 git checkout master
 echo "Updating the master branch..."
 git pull --tags origin master
+echo "Rebasing the branch onto current master..."
+git checkout $BRANCH
+git rebase master
+git checkout master
 echo "Checking the tag..."
 get_unique_tag
 echo "Using tag: $TAGNAME"
