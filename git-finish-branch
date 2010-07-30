@@ -7,6 +7,8 @@
 # * Pushes the changes to the origin repository
 # * Deletes the branch
 
+set -e
+
 ICOUNT=1
 
 if [ -z $1 ]
