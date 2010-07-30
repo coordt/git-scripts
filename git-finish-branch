@@ -76,8 +76,12 @@ git merge --no-ff $BRANCH
 git tag -a $TAGNAME -m"Release $TAGNAME"
 echo "Deleting branch $BRANCH..."
 git branch -d $BRANCH
-git branch -d -r origin/$BRANCH
-git push origin :$BRANCH
+if git branch -r | grep -q $BRANCH
+    then 
+    echo "Deleting remote branch $BRANCH..."
+    git branch -d -r origin/$BRANCH
+    git push origin :$BRANCH
+fi
 echo "Pushing"
 git push --all
 git push --tags
