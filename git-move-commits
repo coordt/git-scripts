@@ -5,6 +5,7 @@
 # moves the last n commits to correct-branch
 # if correct-branch doesn't exist, it creates it
 # if correct-branch does exist, it merges the commits
+set -e
 
 if [ $1 ]
 then

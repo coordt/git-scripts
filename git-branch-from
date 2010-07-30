@@ -4,6 +4,9 @@
 #
 # create a new branch and reset current branch to the commit-reference
 #
+
+set -e
+
 if [ -z $1 ]
 then
     echo "Usage: git branch-from <commit-reference> <new-branch>";

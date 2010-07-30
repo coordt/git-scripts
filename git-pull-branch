@@ -6,6 +6,8 @@
 
 # This updates all the remote branches and tags. Appears to be required.
 
+set -e
+
 if [ -z $1 ]
 then
     echo "You need to specify a branch name to pull."
