@@ -75,7 +75,7 @@ echo "Merging branch $BRANCH into master..."
 git merge --no-ff $BRANCH
 git tag -a $TAGNAME -m"Release $TAGNAME"
 echo "Deleting branch $BRANCH..."
-git branch -d $BRANCH
+git branch -D $BRANCH
 if git branch -r | grep -q $BRANCH
     then 
     echo "Deleting remote branch $BRANCH..."
