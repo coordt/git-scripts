@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 function push_branch () {
     HAS_REMOTE=`git show-ref remotes/origin/$1`
     HAS_LOCAL=`git show-ref heads/$1`
