@@ -1,3 +1,11 @@
+**git-start-branch**
+	*Usage:* ``git start-branch branch``
+	
+	* Creates a new branch
+	* Alias for git checkout -b branch
+	
+	Designed to be a complement to the previously-coded git-finish-branch
+
 **git-finish-branch**
 	*Usage:* ``git finish-branch branch [tag]``
 	
