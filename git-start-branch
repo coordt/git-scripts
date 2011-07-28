@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# Called as git start-branch branch
+#
+# * Creates a new branch
+# * Alias for git checkout -b branch
+
+ICOUNT=1
+
+if [ -z $1 ]
+then
+    echo "You must include a branch name."
+    exit 1
+else
+    BRANCH=$1
+fi
+
+echo "Starting $BRANCH branch..."
+git checkout -b $BRANCH
