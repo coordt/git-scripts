@@ -1,0 +1,24 @@
+#!/bin/bash
+#
+# Called as git export <commit-reference> [<filename>]
+#
+# Performs a git-archive, gzips it and names it <commit-reference>.tar.gz
+# or names it <filename> if included.
+
+if [ -z $1 ]
+then
+    echo "You need to specify a commit-reference to export."
+    echo "Usage: git export commit-reference [filename]"
+    exit 1
+else
+    COMMIT=$1
+fi
+
+if [ -z $2 ]
+then
+    FILENAME="$COMMIT.tar.gz"
+else
+    FILENAME=$2
+fi
+
+git archive $COMMIT | gzip > $FILENAME

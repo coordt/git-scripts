@@ -340,16 +340,6 @@ e.g. <tt class="docutils literal"><span class="pre">04012010-1</span></tt> or <t
 </ul>
 <p class="last">Designed to finish up a local topic/feature branch</p>
 </dd>
-<dt><strong>git-move-commits</strong></dt>
-<dd><p class="first"><em>Usage:</em> <tt class="docutils literal">git <span class="pre">move-commits</span> <span class="pre">&lt;num-commits&gt;</span> <span class="pre">&lt;correct-branch&gt;</span></tt></p>
-<ul class="simple">
-<li>Moves the last <tt class="docutils literal"><span class="pre">num-commits</span></tt> commits to <tt class="docutils literal"><span class="pre">correct-branch</span></tt></li>
-<li>If <tt class="docutils literal"><span class="pre">correct-branch</span></tt> doesn't exist, the script creates it</li>
-<li>if <tt class="docutils literal"><span class="pre">correct-branch</span></tt> does exist, the script merges the commits</li>
-</ul>
-<p class="last">If you commit to the wrong branch (especially <tt class="docutils literal">master</tt>), this script
-will fix that for you.</p>
-</dd>
 <dt><strong>git-pull-branch</strong></dt>
 <dd><p class="first"><em>Usage:</em> <tt class="docutils literal">git <span class="pre">pull-branch</span> &lt;branchname&gt;</tt></p>
 <ul class="simple">
@@ -365,6 +355,24 @@ will fix that for you.</p>
 </ul>
 <p class="last">A simple shortcut to get a local branch on a server without having to
 execute three different commands</p>
+</dd>
+<dt><strong>git-move-commits</strong></dt>
+<dd><p class="first"><em>Usage:</em> <tt class="docutils literal">git <span class="pre">move-commits</span> <span class="pre">&lt;num-commits&gt;</span> <span class="pre">&lt;correct-branch&gt;</span></tt></p>
+<ul class="simple">
+<li>Moves the last <tt class="docutils literal"><span class="pre">num-commits</span></tt> commits to <tt class="docutils literal"><span class="pre">correct-branch</span></tt></li>
+<li>If <tt class="docutils literal"><span class="pre">correct-branch</span></tt> doesn't exist, the script creates it</li>
+<li>if <tt class="docutils literal"><span class="pre">correct-branch</span></tt> does exist, the script merges the commits</li>
+</ul>
+<p class="last">If you commit to the wrong branch (especially <tt class="docutils literal">master</tt>), this script
+will fix that for you.</p>
+</dd>
+<dt><strong>git-branch-from</strong></dt>
+<dd><p class="first"><em>Usage:</em> <tt class="docutils literal">git <span class="pre">branch-from</span> <span class="pre">&lt;commit-reference&gt;</span> <span class="pre">&lt;new-branch-name&gt;</span></tt></p>
+<p class="last">If you made several commits to a branch (especially <tt class="docutils literal">master</tt>), and in retrospect, you really should have been doing that on a new branch, this will create a new branch from the <tt class="docutils literal"><span class="pre">commit-reference</span></tt> and reset current branch to the <tt class="docutils literal"><span class="pre">commit-reference</span></tt>.</p>
+</dd>
+<dt><strong>git-export</strong></dt>
+<dd><p class="first"><em>Usage:</em> <tt class="docutils literal">git export <span class="pre">&lt;commit-reference&gt;</span> [&lt;filename&gt;]</tt></p>
+<p class="last">Exports a tar-gzipped archive of the <tt class="docutils literal"><span class="pre">commit-reference</span></tt>. If <tt class="docutils literal">&lt;filename&gt;</tt> is omitted, the archive is saved as <tt class="docutils literal"><span class="pre">&lt;commit-reference&gt;.tar.gz</span></tt>.</p>
 </dd>
 <dt><strong>git-status-u</strong></dt>
 <dd><p class="first"><em>Usage:</em> <tt class="docutils literal">git <span class="pre">status-u</span></tt></p>

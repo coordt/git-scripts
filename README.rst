@@ -20,16 +20,6 @@
 
 	Designed to finish up a local topic/feature branch
 
-**git-move-commits**
-	*Usage:* ``git move-commits <num-commits> <correct-branch>``
-	
-	* Moves the last ``num-commits`` commits to ``correct-branch``
-	* If ``correct-branch`` doesn't exist, the script creates it
-	* if ``correct-branch`` does exist, the script merges the commits
-	
-	If you commit to the wrong branch (especially ``master``), this script 
-	will fix that for you.
-
 **git-pull-branch**
 	*Usage:* ``git pull-branch <branchname>``
 	
@@ -45,6 +35,26 @@
 	
 	A simple shortcut to get a local branch on a server without having to 
 	execute three different commands
+
+**git-move-commits**
+	*Usage:* ``git move-commits <num-commits> <correct-branch>``
+	
+	* Moves the last ``num-commits`` commits to ``correct-branch``
+	* If ``correct-branch`` doesn't exist, the script creates it
+	* if ``correct-branch`` does exist, the script merges the commits
+	
+	If you commit to the wrong branch (especially ``master``), this script 
+	will fix that for you.
+
+**git-branch-from**
+	*Usage:* ``git branch-from <commit-reference> <new-branch-name>``
+	
+	If you made several commits to a branch (especially ``master``), and in retrospect, you really should have been doing that on a new branch, this will create a new branch from the ``commit-reference`` and reset current branch to the ``commit-reference``.
+
+**git-export**
+	*Usage:* ``git export <commit-reference> [<filename>]``
+	
+	Exports a tar-gzipped archive of the ``commit-reference``. If ``<filename>`` is omitted, the archive is saved as ``<commit-reference>.tar.gz``.
 
 **git-status-u**
 	*Usage:* ``git status-u``
