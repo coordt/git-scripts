@@ -36,6 +36,19 @@
 	A simple shortcut to get a local branch on a server without having to 
 	execute three different commands
 
+**git-merge-branch**
+    *Usage:* ``git merge-branch <branchname>``
+    
+	* Merges a branch into the master branch (with no-ff)
+	* Tags the merge with either the passed tag or the date in the 
+	  form ``MMDDYYYY``
+	* If you specify the tag, and the tag exists, it will fail
+	* If you don't specify the tag, and the tag exists, it appends a number,
+	  e.g. ``04012010-1`` or ``04012010-2``
+	* Pushes the changes to the origin repository
+	
+	Similar to ``finish-branch`` without deleting the branch. Designed to merge a remote (long lasting) branch
+
 **git-move-commits**
 	*Usage:* ``git move-commits <num-commits> <correct-branch>``
 	
